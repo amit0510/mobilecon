@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.amitk.mobilecon.GroupProfile">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@mipmap/back"
+        android:id="@+id/rel">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/groupdp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/team" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/chooser"
+            android:src="@drawable/ic_edit"
+            android:layout_marginBottom="5dp"
+            android:layout_alignBottom="@+id/groupdp"
+            android:layout_alignRight="@+id/groupdp"/>
+    </RelativeLayout>
+    <EditText
+        android:id="@+id/groupname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Group Name"
+        android:paddingLeft="15dp"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="#AAe649c1"
+        android:layout_below="@+id/rel"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+</RelativeLayout>

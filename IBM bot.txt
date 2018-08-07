@@ -1,0 +1,110 @@
+https://watson-conversation.ng.bluemix.net/eu-gb/b0488d75-f161-47e2-b9f0-a90bf5ef172a/workspaces/b8a35230-c672-407d-8c16-2a78b48f889a/build/intents
+
+Credential name
+
+conversation_tooling_key1518421201677
+
+Username
+
+615ba88f-01d1-49cf-9204-373de21b021c
+
+Password
+
+KocUeu4jS8k0
+
+
+Workspace name
+
+messages
+
+Workspace ID
+
+b8a35230-c672-407d-8c16-2a78b48f889a
+
+Workspace URL
+
+https://gateway.watsonplatform.net/conversation/api/v1/workspaces/b8a35230-c672-407d-8c16-2a78b48f889a/message/
+
+
+
+package com.example.amitk.mobilecon;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.text.Html;
+import android.view.KeyEvent;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.ibm.watson.developer_cloud.conversation.v1.ConversationService;
+import com.ibm.watson.developer_cloud.conversation.v1.model.MessageRequest;
+import com.ibm.watson.developer_cloud.conversation.v1.model.MessageResponse;
+import com.ibm.watson.developer_cloud.dialog.v1.model.Conversation;
+import com.ibm.watson.developer_cloud.http.ServiceCallback;
+
+public class ChatBot extends AppCompatActivity {
+    String inputText="";
+    String outputText="";
+    TextView conversation;
+    EditText userInput;
+    MessageRequest request;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_chat_bot);
+
+        final ConversationService mConversationService=new ConversationService("2017-05-26","615ba88f-01d1-49cf-9204-373de21b021c","KocUeu4jS8k0");
+        conversation = (TextView)findViewById(R.id.conversation);
+        userInput = (EditText)findViewById(R.id.user_input);
+
+        userInput.setOnEditorActionListener(new TextView
+                .OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView tv,
+                                          int action, KeyEvent keyEvent) {
+                if(action == EditorInfo.IME_ACTION_DONE) {
+                     inputText= userInput.getText().toString();
+                    conversation.append(
+                            Html.fromHtml("<p><b>You:</b> " + inputText + "</p>")
+                    );
+                    userInput.setText("");
+
+                    request = new MessageRequest.Builder()
+                            .inputText(inputText)
+                            .build();
+
+                    mConversationService
+                            .message("b8a35230-c672-407d-8c16-2a78b48f889a", request)
+                            .enqueue(new ServiceCallback<MessageResponse>() {
+                                @Override
+                                public void onResponse(MessageResponse response) {
+
+                                    outputText= response.getText().get(0);
+                                    System.out.println("--------------------------------------------" + outputText.toString());
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Toast.makeText(ChatBot.this,outputText,Toast.LENGTH_LONG).show();
+                                            conversation.append(
+                                                    Html.fromHtml("<p><b>Bot:</b> " +
+                                                            outputText + "</p>")
+                                            );
+                                        }
+                                    });
+                                    //setMethod(outputText);
+                                }
+
+                                @Override
+                                public void onFailure(Exception e) {
+                                    System.out.println("----------------------------------------Failuer : " + e.toString());
+                                }
+                            });
+                }
+                return false;
+            }
+        });
+
+    }
+}

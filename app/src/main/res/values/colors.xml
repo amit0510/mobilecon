@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#b41f91</color>
+    <color name="colorPrimaryDark">#e649c1</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="hintcolor">#E1E1E1</color>
+    <color name="tr">#00e1e1e1</color>
+    <color name="gray">#F4F4F4</color>
+    <color name="sinch_purple">#b41f91</color>
+</resources>

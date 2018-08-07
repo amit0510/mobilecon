@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.amitk.mobilecon.Story_List">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:navigationIcon="?android:attr/homeAsUpIndicator"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbar"
+        android:background="#FFFFFF">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/story_dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/app_ic"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@mipmap/add_story"
+            android:layout_below="@+id/story_dp"
+            android:layout_toRightOf="@+id/story_dp"
+            android:layout_marginTop="-25dp"
+            android:layout_marginLeft="-25dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:layout_toRightOf="@+id/story_dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical">
+            <TextView
+                android:id="@+id/mystorytext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="My Story"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tap to add story updates"
+                android:textSize="15sp"
+                android:textColor="#77000000"
+                android:layout_below="@+id/mystorytext"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rellayout"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/story_dp"
+            android:background="#F4F4F4"
+            android:elevation="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recent Updates"
+                android:layout_marginLeft="15dp"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"/>
+        </RelativeLayout>
+        <ListView
+            android:id="@+id/storyList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rellayout"
+            android:layout_marginTop="7dp">
+
+        </ListView>
+        <!--<ImageView-->
+            <!--android:id="@+id/storyimage"-->
+            <!--android:layout_below="@+id/rellayout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:src="@drawable/app_ic"-->
+            <!--/>-->
+
+    </RelativeLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@mipmap/camera"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/gallary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
+        app:srcCompat="@mipmap/gallery"
+        android:layout_above="@+id/fab" />
+</RelativeLayout>

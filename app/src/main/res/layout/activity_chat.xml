@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.amitk.mobilecon.Chat"
+    android:background="#F1F1F1">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="#66000000">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/layout"
+            android:layout_marginLeft="-30dp">
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/backbutton"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/userprofile"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/app_ic"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@+id/back"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/userprofile">
+                <TextView
+                    android:id="@+id/titleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="My Application"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/lastSeen"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last seen"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listView"
+        android:layout_below="@+id/toolbar"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:layout_marginBottom="50dp"
+        android:stackFromBottom="true">
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout"
+        android:gravity="right"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="2dp">
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:id="@+id/editMesssageE"
+            android:hint="Type here..."
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:textColor="#000000"
+            android:background="@drawable/edittextdesign" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:onClick="sendButtonClicked"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_send"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/block_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"
+        android:background="#FFFFFF">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="You can not Message, You are blocked"/>
+    </LinearLayout>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu_green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        fab:menu_animationDelayPerItem="30"
+        android:layout_alignParentBottom="true"
+        fab:menu_colorNormal="#43A047"
+        fab:menu_labels_position="right"
+        fab:menu_colorPressed="#2E7D32"
+        fab:menu_labels_maxLines="2"
+        fab:menu_labels_ellipsize="end"
+        fab:menu_fab_size="mini"
+        fab:menu_icon="@mipmap/share"
+        fab:menu_labels_showShadow="true"
+        fab:menu_labels_textColor="#FFFFFF">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fabdocument"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_size="mini"
+            android:src="@mipmap/document"
+            fab:fab_label="Document" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fabcamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_size="mini"
+            android:src="@mipmap/camera"
+            fab:fab_label="Camera" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fabgallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_size="mini"
+            android:src="@mipmap/gallery"
+            fab:fab_label="Gallery"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fablocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_size="mini"
+            android:src="@mipmap/location"
+            fab:fab_label="Location" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fabcontact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_size="mini"
+            android:src="@mipmap/contact"
+            fab:fab_label="Contact"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fabaudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_size="mini"
+            android:src="@mipmap/audio"
+            fab:fab_label="Audio" />
+    </com.github.clans.fab.FloatingActionMenu>
+
+</RelativeLayout>

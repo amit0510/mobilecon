@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="Video Call"
+        android:id="@+id/videoCall"
+        android:icon="@mipmap/ic_videocall"
+        app:showAsAction="always"
+        />
+    <item
+        android:title="Voice Call"
+        android:id="@+id/voiceCall"
+        android:icon="@mipmap/voicecall"
+        app:showAsAction="always"
+        android:contentDescription="Voice Call"
+        />
+    <item
+        android:title="Add To Contact"
+        android:id="@+id/addcon"
+        app:showAsAction="withText"
+        />
+    <item
+        android:title="Block Contact"
+        android:id="@+id/block"
+        app:showAsAction="withText"
+        />
+</menu>

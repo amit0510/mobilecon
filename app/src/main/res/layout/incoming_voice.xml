@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.amitk.mobilecon.IncomingCallScreenActivity"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="#fffafafa">
+
+        <TextView
+            android:id="@+id/remoteUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="14dp"
+            android:text="Sample user"
+            android:textColor="@color/sinch_purple"
+            android:textSize="28sp"/>
+
+        <TextView
+            android:id="@+id/callState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Incoming Voice call"
+            android:textColor="@color/sinch_purple"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:layout_marginBottom="10dp"/>
+    </LinearLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_margin="10dp"
+        android:id="@+id/userProfilePic"
+        android:src="@drawable/ic_user"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"/>
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:padding="10dp">
+        <ng.max.slideview.SlideView
+            android:id="@+id/accept"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:sv_buttonBackgroundColor="#FFFFFF"
+            app:sv_buttonImage="@mipmap/callaccept"
+            app:sv_slideBackgroundColor="#5500FF00"
+            app:sv_slideText="Answer..."
+            app:sv_slideTextColor="#096f03"
+            app:sv_reverseSlide="false"
+            app:sv_animateSlideText="true"
+            app:sv_strokeColor="#047e15"/>
+        <ng.max.slideview.SlideView
+            android:id="@+id/reject"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:sv_buttonBackgroundColor="#FFFFFF"
+            app:sv_buttonImage="@mipmap/callreject"
+            app:sv_slideBackgroundColor="#55ff0000"
+            app:sv_slideText="Decline..."
+            app:sv_slideTextColor="#a40505"
+            app:sv_reverseSlide="true"
+            app:sv_animateSlideText="true"
+            app:sv_strokeColor="#980101"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/accept"/>
+    </RelativeLayout>
+
+</RelativeLayout>

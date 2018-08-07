@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layoutBack"
+    android:gravity="center_vertical"
+    tools:context="com.example.amitk.mobilecon.ProfileUpload"
+    android:background="#EBEBEB">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="200dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_user"
+            android:layout_marginTop="40dp" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/choose"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_edit"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/tvUser"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Add User Name"
+                android:textSize="20dp"
+                android:paddingLeft="10dp" />
+            <EditText
+                android:id="@+id/etUser"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:background="#00000000"
+                android:paddingLeft="10dp"
+                android:visibility="invisible"/>
+            <ImageView
+                android:id="@+id/btnEditUsername"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/ic_edit_profile"
+                android:layout_toRightOf="@+id/tvUser"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textStyle="normal"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:text="This is not your user name or pin.\n This is name will be visible to your contact."/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#FFFFFF">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/ttt"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:gravity="left"
+                    android:text="Bio"/>
+                <ImageView
+                    android:id="@+id/btnEditBio"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_edit_profile" />
+
+            </LinearLayout>
+        <TextView
+            android:id="@+id/Bio"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17dp"
+            android:layout_marginTop="40dp"
+            android:gravity="left"
+            android:text="Add Bio"/>
+        </RelativeLayout>
+
+        <Button
+                android:id="@+id/buttonUpload"
+                android:layout_width="200dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:background="#FFFFFF"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+                android:text="Done" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
